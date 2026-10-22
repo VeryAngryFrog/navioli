@@ -1,0 +1,400 @@
+{
+  "products": {
+    "milk": {
+      "id": "milk",
+      "name": "Milk",
+      "keywords": [
+        "milk",
+        "whole milk",
+        "long-life milk"
+      ],
+      "available": true,
+      "stock_count": 12,
+      "shelf_id": "shelf_1",
+      "board": 1
+    },
+    "bread": {
+      "id": "bread",
+      "name": "Bread",
+      "keywords": [
+        "bread",
+        "wholemeal bread",
+        "white bread",
+        "toast"
+      ],
+      "available": true,
+      "stock_count": 8,
+      "shelf_id": "shelf_2",
+      "board": 2
+    },
+    "pasta": {
+      "id": "pasta",
+      "name": "Pasta",
+      "keywords": [
+        "noodles",
+        "pasta",
+        "spaghetti"
+      ],
+      "available": true,
+      "stock_count": 15,
+      "shelf_id": "shelf_3",
+      "board": 0
+    },
+    "water": {
+      "id": "water",
+      "name": "Water",
+      "keywords": [
+        "water",
+        "mineral water",
+        "still water"
+      ],
+      "available": true,
+      "stock_count": 20,
+      "shelf_id": "shelf_4",
+      "board": 1
+    },
+    "cheese": {
+      "id": "cheese",
+      "name": "Cheese",
+      "keywords": [
+        "cheese",
+        "gouda",
+        "sliced cheese"
+      ],
+      "available": false,
+      "stock_count": 0,
+      "shelf_id": "shelf_5",
+      "board": 0
+    }
+  },
+  "layout": {
+    "meters_per_aisle": 2,
+    "meters_per_row": 1.5,
+    "aisles_per_row": 3,
+    "entrance": {
+      "facing": "N",
+      "col": 0
+    },
+    "checkout": {
+      "col": 2
+    }
+  },
+  "beacons": {
+    "beacon_entrance": {
+      "id": "beacon_entrance",
+      "name": "Entrance",
+      "description": "Beacon right at the entrance of the supermarket.",
+      "x": 0,
+      "y": 0
+    },
+    "beacon_aisle_1": {
+      "id": "beacon_aisle_1",
+      "name": "Aisle 1",
+      "description": "Beacon at the start of Aisle 1.",
+      "x": 2,
+      "y": 1
+    },
+    "beacon_aisle_2": {
+      "id": "beacon_aisle_2",
+      "name": "Aisle 2",
+      "description": "Beacon at the start of Aisle 2.",
+      "x": 4,
+      "y": 1
+    },
+    "beacon_aisle_3": {
+      "id": "beacon_aisle_3",
+      "name": "Aisle 3",
+      "description": "Beacon at the start of Aisle 3.",
+      "x": 6,
+      "y": 1
+    },
+    "beacon_aisle_4": {
+      "id": "beacon_aisle_4",
+      "name": "Aisle 4",
+      "description": "Beacon at the start of Aisle 4.",
+      "x": 8,
+      "y": 1
+    }
+  },
+  "shelves": {
+    "shelf_1": {
+      "id": "shelf_1",
+      "name": "Shelf 3",
+      "aisle": 3,
+      "side": "left",
+      "row": 0,
+      "start_beacon_id": "beacon_entrance",
+      "route_overrides": {},
+      "routes": {
+        "beacon_entrance": [
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn left.",
+          "Walk straight to the 1st cross-aisle.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 3.",
+          "The shelf you want is on the left.",
+          "The item Milk is on the middle shelf."
+        ],
+        "beacon_aisle_1": [
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn left.",
+          "Walk straight to the 1st cross-aisle.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 3.",
+          "The shelf you want is on the left.",
+          "The item Milk is on the middle shelf."
+        ],
+        "beacon_aisle_2": [
+          "Walk straight to the 1st cross-aisle.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 3.",
+          "The shelf you want is on the left.",
+          "The item Milk is on the middle shelf."
+        ],
+        "beacon_aisle_3": [
+          "The shelf you want is on the left.",
+          "The item Milk is on the middle shelf."
+        ],
+        "beacon_aisle_4": [
+          "Go back to the entrance door.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn left.",
+          "Walk straight to the 1st cross-aisle.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 3.",
+          "The shelf you want is on the left.",
+          "The item Milk is on the middle shelf."
+        ]
+      }
+    },
+    "shelf_2": {
+      "id": "shelf_2",
+      "name": "Shelf 1",
+      "aisle": 1,
+      "side": "right",
+      "row": 0,
+      "start_beacon_id": "beacon_entrance",
+      "route_overrides": {},
+      "routes": {
+        "beacon_entrance": [
+          "Go straight into Aisle 1.",
+          "The shelf you want is on the right.",
+          "The item Bread is on the bottom shelf."
+        ],
+        "beacon_aisle_1": [
+          "The shelf you want is on the right.",
+          "The item Bread is on the bottom shelf."
+        ],
+        "beacon_aisle_2": [
+          "Turn left and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 1.",
+          "The shelf you want is on the right.",
+          "The item Bread is on the bottom shelf."
+        ],
+        "beacon_aisle_3": [
+          "Turn left and walk about 4 meters straight ahead.",
+          "Turn right into Aisle 1.",
+          "The shelf you want is on the right.",
+          "The item Bread is on the bottom shelf."
+        ],
+        "beacon_aisle_4": [
+          "Go back to the entrance door.",
+          "Go straight into Aisle 1.",
+          "The shelf you want is on the right.",
+          "The item Bread is on the bottom shelf."
+        ]
+      }
+    },
+    "shelf_3": {
+      "id": "shelf_3",
+      "name": "Shelf 2",
+      "aisle": 2,
+      "side": "left",
+      "row": 0,
+      "start_beacon_id": "beacon_entrance",
+      "route_overrides": {},
+      "routes": {
+        "beacon_entrance": [
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn left into Aisle 2.",
+          "The shelf you want is on the left.",
+          "The item Pasta is on the top shelf."
+        ],
+        "beacon_aisle_1": [
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn left into Aisle 2.",
+          "The shelf you want is on the left.",
+          "The item Pasta is on the top shelf."
+        ],
+        "beacon_aisle_2": [
+          "The shelf you want is on the left.",
+          "The item Pasta is on the top shelf."
+        ],
+        "beacon_aisle_3": [
+          "Turn left and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 2.",
+          "The shelf you want is on the left.",
+          "The item Pasta is on the top shelf."
+        ],
+        "beacon_aisle_4": [
+          "Go back to the entrance door.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn left into Aisle 2.",
+          "The shelf you want is on the left.",
+          "The item Pasta is on the top shelf."
+        ]
+      }
+    },
+    "shelf_4": {
+      "id": "shelf_4",
+      "name": "Shelf 5",
+      "aisle": 4,
+      "side": "right",
+      "row": 0,
+      "start_beacon_id": "beacon_entrance",
+      "route_overrides": {},
+      "routes": {
+        "beacon_entrance": [
+          "Walk straight to the 1st cross-aisle.",
+          "Go straight into Aisle 4.",
+          "The shelf you want is on the right.",
+          "The item Water is on the middle shelf."
+        ],
+        "beacon_aisle_1": [
+          "Go back to the entrance door.",
+          "Walk straight to the 1st cross-aisle.",
+          "Go straight into Aisle 4.",
+          "The shelf you want is on the right.",
+          "The item Water is on the middle shelf."
+        ],
+        "beacon_aisle_2": [
+          "Go back to the entrance door.",
+          "Walk straight to the 1st cross-aisle.",
+          "Go straight into Aisle 4.",
+          "The shelf you want is on the right.",
+          "The item Water is on the middle shelf."
+        ],
+        "beacon_aisle_3": [
+          "Go back to the entrance door.",
+          "Walk straight to the 1st cross-aisle.",
+          "Go straight into Aisle 4.",
+          "The shelf you want is on the right.",
+          "The item Water is on the middle shelf."
+        ],
+        "beacon_aisle_4": [
+          "The shelf you want is on the right.",
+          "The item Water is on the middle shelf."
+        ]
+      }
+    },
+    "shelf_5": {
+      "id": "shelf_5",
+      "name": "Shelf 4",
+      "aisle": 3,
+      "side": "right",
+      "row": 0,
+      "start_beacon_id": "beacon_entrance",
+      "route_overrides": {},
+      "routes": {
+        "beacon_entrance": [
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn left.",
+          "Walk straight to the 1st cross-aisle.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 3.",
+          "The shelf you want is on the right.",
+          "The item Cheese is on the top shelf."
+        ],
+        "beacon_aisle_1": [
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn left.",
+          "Walk straight to the 1st cross-aisle.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 3.",
+          "The shelf you want is on the right.",
+          "The item Cheese is on the top shelf."
+        ],
+        "beacon_aisle_2": [
+          "Walk straight to the 1st cross-aisle.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 3.",
+          "The shelf you want is on the right.",
+          "The item Cheese is on the top shelf."
+        ],
+        "beacon_aisle_3": [
+          "The shelf you want is on the right.",
+          "The item Cheese is on the top shelf."
+        ],
+        "beacon_aisle_4": [
+          "Go back to the entrance door.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn left.",
+          "Walk straight to the 1st cross-aisle.",
+          "Turn right and walk about 2 meters straight ahead.",
+          "Turn right into Aisle 3.",
+          "The shelf you want is on the right.",
+          "The item Cheese is on the top shelf."
+        ]
+      }
+    }
+  },
+  "board_labels": [
+    "Top shelf",
+    "Middle shelf",
+    "Bottom shelf"
+  ],
+  "checkout_routes": {
+    "to_checkout": {
+      "beacon_entrance": [
+        "Turn right and walk about 4 meters straight ahead.",
+        "Turn left.",
+        "You reach the checkout."
+      ],
+      "beacon_aisle_1": [
+        "Turn around (towards the entrance).",
+        "Walk straight to the front cross-aisle.",
+        "Turn left and walk about 4 meters straight ahead.",
+        "Turn left.",
+        "You reach the checkout."
+      ],
+      "beacon_aisle_2": [
+        "Turn around (towards the entrance).",
+        "Walk straight to the front cross-aisle.",
+        "Turn left and walk about 2 meters straight ahead.",
+        "Turn left.",
+        "You reach the checkout."
+      ],
+      "beacon_aisle_3": [
+        "Turn around (towards the entrance).",
+        "Walk straight to the front cross-aisle.",
+        "Turn around.",
+        "You reach the checkout."
+      ],
+      "beacon_aisle_4": [
+        "Turn around (towards the entrance).",
+        "Walk straight to the front cross-aisle.",
+        "Turn left and walk about 4 meters straight ahead.",
+        "Turn left.",
+        "You reach the checkout."
+      ]
+    },
+    "checkout_to_exit": [
+      "Turn right and walk about 4 meters straight ahead.",
+      "Turn left and go out through the entrance/exit."
+    ]
+  },
+  "obstacle_messages": {
+    "obstacle_front": {
+      "id": "obstacle_front",
+      "message": "Caution, obstacle ahead. Please stop or step slightly to the right."
+    },
+    "obstacle_left": {
+      "id": "obstacle_left",
+      "message": "There is an obstacle on the left. Please keep slightly to the right."
+    },
+    "obstacle_right": {
+      "id": "obstacle_right",
+      "message": "There is an obstacle on the right. Please keep slightly to the left."
+    }
+  }
+}

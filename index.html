@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navioli · Shelf management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M24 3C15 3 8 10 8 19c0 11 16 26 16 26s16-15 16-26C40 10 33 3 24 3z" fill="#fff" stroke="#2E7D32" stroke-width="2.5"/>
+        <rect x="16" y="13" width="16" height="12" rx="2.5" fill="#F4B740" stroke="#2E7D32" stroke-width="2"/>
+        <circle cx="24" cy="33" r="6" fill="#F39A2B"/>
+        <path d="M24 30l2.2 4.4L24 33.4 21.8 34.4z" fill="#fff"/>
+      </svg>
+      <div>
+        <span class="wordmark">Navioli</span>
+        <span class="subtitle">Shelf management</span>
+      </div>
+    </div>
+    <div class="actions">
+      <span id="saveStatus" class="save-status" aria-live="polite"></span>
+      <button class="btn btn-ghost" id="newShelfBtn">＋ New shelf</button>
+      <button class="btn btn-primary" id="newProductBtn">＋ New item</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="plan-header">
+      <h2>Floor plan</h2>
+      <div class="plan-tools">
+        <label class="apr-ctrl">Aisles per row
+          <input id="aislesPerRow" type="number" min="1" max="12" step="1" />
+        </label>
+        <button class="btn btn-ghost" id="newAisleBtn" type="button">＋ New aisle</button>
+        <div class="legend">
+          <span><i class="lg-entrance"></i> Entrance/Exit</span>
+          <span><i class="lg-kasse"></i> Checkout</span>
+          <span><i class="lg-shelf"></i> Shelf</span>
+          <span><i class="lg-obst"></i> Obstacle side</span>
+        </div>
+      </div>
+    </div>
+    <section id="plan" class="plan" aria-label="Floor plan"></section>
+
+    <div class="list-header"><h2>Shelves &amp; Directions</h2></div>
+    <section id="shelfList" class="shelf-list" aria-label="Shelves with directions"></section>
+
+    <div class="list-header"><h2>Checkout &amp; Exit</h2></div>
+    <section class="checkout-routes" aria-label="Routes to the checkout and exit">
+      <div class="cr-card">
+        <label class="cr-start">To the checkout – from:
+          <select id="checkoutFrom"></select></label>
+        <ol class="route" id="toCheckoutRoute"></ol>
+      </div>
+      <div class="cr-card">
+        <h3>From the checkout to the exit</h3>
+        <ol class="route" id="checkoutExitRoute"></ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shelf dialog -->
+  <dialog id="shelfDialog" class="dialog">
+    <form method="dialog" id="shelfForm">
+      <h2 id="shelfDialogTitle">New shelf</h2>
+      <div class="grid">
+        <label>Aisle (number)<input name="aisle" type="number" min="1" required value="1" /></label>
+        <label>Name (optional)<input name="shelfname" placeholder="e.g. Dairy – empty = shelf number" /></label>
+      </div>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-danger" id="shelfDeleteBtn">Delete</button>
+        <button type="button" class="btn btn-ghost" id="shelfResetNameBtn">Reset name</button>
+        <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Save shelf</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Item dialog -->
+  <dialog id="productDialog" class="dialog">
+    <form method="dialog" id="productForm">
+      <h2 id="productDialogTitle">New item</h2>
+      <div class="grid">
+        <label>Name<input name="name" required placeholder="Yoghurt" /></label>
+        <label>Stock<input name="stock_count" type="number" min="0" required value="0" /></label>
+        <label>Shelf
+          <select name="shelf_id" id="productShelfSelect"></select>
+        </label>
+        <label>Shelf level
+          <select name="board" id="productBoardSelect"></select>
+        </label>
+        <label class="check">
+          <input name="available" type="checkbox" checked /> Available
+        </label>
+      </div>
+      <label>Keywords (comma-separated)
+        <input name="keywords" required placeholder="yoghurt, plain yoghurt" />
+      </label>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-danger" id="productDeleteBtn">Delete</button>
+        <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Save item</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
