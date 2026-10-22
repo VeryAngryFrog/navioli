@@ -1,5 +1,7 @@
 # Navioli
 
+Teamprojekt mit Jan Moos und Sarah-Lena Janaschke, Hochschule Bremen, SoSe 26
+
 Navioli is a shopping aid for blind and partially sighted people. It guides them
 through a supermarket with spoken, step-by-step directions to the items they are
 looking for.
